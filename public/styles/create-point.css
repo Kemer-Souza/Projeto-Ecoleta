@@ -1,0 +1,145 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100%;
+    margin: auto;
+    height: 80%;
+}
+
+#page-create-point header{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    
+}
+
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg');
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+form{
+    background-color: white;
+    padding: 90px;  /* preenchimento*/
+    border-radius: 8px;
+    margin: 80px auto;
+    max-width: 730px;    
+}
+
+form h1{
+    font-size: 36px;
+}
+
+form fieldset{
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+form legend span{
+    color:var(--title-color);
+    font-size: 14px;
+}
+
+form .field{
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    margin-bottom: 24px;
+}
+
+form .field-grup{
+    display: flex;
+    border: 0;
+    align-items: center;
+
+}
+
+form input, select{
+    background-color:#dcdce4;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    outline: black;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{
+    margin-bottom: 8px;
+}
+form .field-grup .field + .field{
+    margin-left: 24px;
+}
+form button{
+    width: 260px;
+    height: 56px;
+    background-color: var(--primary-color);
+    border: 0;
+    margin-top: 40px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 400ms;
+}
+form button:hover{
+    background-color: #2fb86e;
+}
+form .itens-grid{
+    display: grid; /*coloca os itens em forma de linha e coluna*/
+    grid-template-columns: 1fr 1fr 1fr; /* O fr faz ele forçar colocar 3 itens na coluna, chega no 3 pula pra proxima*/
+    gap: 16px; /*separação entre os elementos tipo margem, é uma especificação do grid*/
+    margin-top: 30px;
+}
+form .itens-grid li{
+    background-color: #f5f5f5;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+form .itens-grid li span{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--title-color);
+}
+form .itens-grid li.selected{ /*quando esta juntos significa que o li esta com a classe*/
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+.itens-grid li img,
+.itens-grid li span{
+    pointer-events: none;
+
+}

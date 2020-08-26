@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoleta</title>
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/styles/create-point.css">
+<link rel="stylesheet" href="/styles/modal.css">
+</head>
+<body>
+    <div id="page-create-point">
+        
+            <header>
+                <img src="/assets/logo.svg" alt="logomarca">
+                <a href="/">
+                <span></span>
+                Voltar para home
+                </a>
+            </header>
+        <form action="/save-point" method="POST">
+            <h1>Cadastro do ponto de coleta</h1>
+            <fieldset>
+                <legend>
+                    <h2>Dados da Entidade</h2>
+                </legend>
+                <div class="field">
+                    <label for="name">Nome da entidade</label>
+                    <input type="text" name="name" placeholder="Nome da Entidade" required>
+                    <label for="image">URL da imagem</label>
+                    <input type="text" name="image" placeholder="http://" required>
+                </div>
+
+                <div class="field-grup">
+                    <div class="field">
+                        <label for="address">Endereço</label>
+                        <input type="text" name="address" placeholder="Endereço" required>
+                    </div>
+                    <div class="field">
+                        <label for="address2">Numero/complemento</label>
+                        <input type="number" name="address2" placeholder="N°" required>
+                    </div>
+                </div>
+
+                <div class="field-grup">
+
+                    <div class="field">
+                        <label for="estado">Estado</label>
+                        <select name="uf" required>
+                            <option value="">selecione o estado</option>    
+                            
+                        </select>
+                        <input type="hidden" name="estado">
+                    </div>
+
+                    <div class="field">
+                        <label for="Cidade">Cidade</label>
+                        <select name="city" disabled required>
+                        <option value="">Selecione a Cidade</option>
+                        </select>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h2>Itens de coleta</h2>
+                    <span>Selecione um ou mais itens abaixo</span>
+                </legend>
+                    <div class="itens-grid">
+                        <li data-id="Lampadas">
+                            <img src="/assets/lampadas.svg" alt="lampadas" >
+                            <span>Lampadas</span>
+                        </li>
+                        <li data-id="Pilhas e baterias">
+                            <img src="/assets/baterias.svg" alt="Pilhas e baterias" >
+                            <span>Pilhas e baterias</span>
+                        </li>
+                        <li data-id="Papeis e papelao">
+                            <img src="/assets/papeis-papelao.svg" alt="Papeis e papelao" >
+                            <span>Papeis e papelao</span>
+                        </li>
+                        <li data-id="Residuos eletronicos">
+                            <img src="/assets/eletronicos.svg" alt="Residuos eletronicos" >
+                            <span>Residuos eletronicos</span>
+                        </li>
+                        <li data-id="Residuos organicos">
+                            <img src="/assets/organicos.svg" alt="Residuos organicos" >
+                            <span>Residuos organicos</span>
+                        </li>
+                        <li data-id="Oleo de Cozinha">
+                            <img src="/assets/oleo.svg" alt="Oleo de Cosinha" >
+                            <span>Oleo de Cozinha</span>
+                        </li>
+                    </div>
+                
+
+            </fieldset>
+            <input type="hidden" name="itens">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    {% if saved%}
+    {%include "modal.html"%}
+    {%endif%}
+<script src="/scripts/create-point.js"></script>
+
+</body>
+</html>
